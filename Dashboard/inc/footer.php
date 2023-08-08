@@ -263,7 +263,7 @@
                             <div class="adress-form-content">
                                 <h2>Cào Dữ Liệu Website <span id="adress-close">X Đóng</span></h2><br>
                                 <form action="http://127.0.0.1:5000/run-python" method="post">
-                                   <p>Nhập đầy đủ đường dẫn trang bắt đầu và trang kết thúc để tiến hành cào</p>
+                                   <p>Nhập số trang bắt đầu và trang kết thúc để tiến hành cào</p>
                                         <input type="number" placeholder="Trang bắt đầu" min="0" name="numstart" id="" required oninvalid="setCustomValidity('Vui lòng điền trang bắt đầu')">
                                         <input type="number" placeholder="Trang kết thúc" min="1" name="numend" id="" required oninvalid="setCustomValidity('Vui lòng điền trang kết thúc')">
                                         <button type="submit" name="button" id="runButton">Xác nhận</button>
