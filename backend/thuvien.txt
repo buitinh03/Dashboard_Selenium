@@ -1,0 +1,6 @@
+selenium
+chromedriver_autoinstaller
+psycopg2
+bs4
+flask
+datetime
