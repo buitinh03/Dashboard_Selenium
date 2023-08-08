@@ -36,9 +36,9 @@ include_once('connect.php');
 
         <p>Đã bán: <?php echo $result['sales_in_last_24_hours'] ?></p>
 
-        <!-- <h2>Thời gian:</h2>
+        <h2>Thời gian:</h2>
     
-        <p><?php echo $result['datetime'] ?></p> -->
+        <p><?php echo $result['ngay'] ?></p>
 
         <div class="features">
             <h3>Đặc tính sản phẩm:</h3>
