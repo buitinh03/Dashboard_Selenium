@@ -1,6 +1,6 @@
-selenium
-chromedriver_autoinstaller
-psycopg2
-bs4
-flask
-datetime
+selenium = 4.10.0
+chromedriver_autoinstaller = 0.2.2
+psycopg2 = 2.9.6
+bs4 = 0.0.1
+flask = 1.1.2
+datetime = 5.2
