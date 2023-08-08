@@ -160,43 +160,43 @@ chart3.render();
                       
                     </div>
                     <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-data: {
-            labels: [],
-            datasets: []
-        },
-        options: {}
-    });
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                    data: {
+                                labels: [],
+                                datasets: []
+                            },
+                            options: {}
+                        });
 
-    function handleClick(event) {
-        var rowData = event.target.parentNode;
-        var cells = rowData.getElementsByTagName('td');
+                        function handleClick(event) {
+                            var rowData = event.target.parentNode;
+                            var cells = rowData.getElementsByTagName('td');
 
-        var data = [];
-        for (var i = 9; i < cells.length; i++) {
-            data.push(parseInt(cells[i].innerText));
-        }
+                            var data = [];
+                            for (var i = 3; i <cells.length-2; i++) {
+                                data.push(parseInt(cells[i].innerText));
+                            }
 
-        var dataset = {
-            // label: 'Dòng ' + (myChart.data.labels.length + 1),
-            label:cells[1].innerText,
-            data: data,
-            backgroundColor: 'blue'
-        };
-        var h=1;
-        var lb=[];
-        for (var i = 9; i < cells.length; i++){
-            lb.push("T "+h);
-            h++
-        }
-        
-        myChart.data.labels = lb;
-        myChart.data.datasets = [dataset];
-        myChart.update();
-    }
-</script>
+                            var dataset = {
+                                // label: 'Dòng ' + (myChart.data.labels.length + 1),
+                                label:cells[1].innerText,
+                                data: data,
+                                backgroundColor: 'blue'
+                            };
+                            var h=1;
+                            var lb=[];
+                            for (var i = 3; i <cells.length-2; i++){
+                                lb.push("T "+h);
+                                h++
+                            }
+                            
+                            myChart.data.labels = lb;
+                            myChart.data.datasets = [dataset];
+                            myChart.update();
+                        }
+                    </script>
                     <!END OF INCOME>
                     <!-- <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script> -->
                     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
