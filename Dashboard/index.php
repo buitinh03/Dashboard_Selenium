@@ -1,7 +1,5 @@
 <?php include "inc/header.php";
     include_once('format/format.php');
-    //abc ef
-    //tiep theo làm 
 
 ?>
             <! END OF ASIDE>
