@@ -757,4 +757,81 @@ gap: 0.6rem;
     transform: translateY(-3px); 
 }
 
+#adress-form a h3{
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--color-primary);
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    transition: .5s all ease;
+}
+
+#adress-form a:hover h3{
+    color: var(--color-white);
+}
+
+#adress-form h3{
+    color: var(--color-white);
+}
+
+#adress-form a{
+    margin-top: -100px;
+    margin-left: -120px;
+    margin-right: -90px;
+    margin-bottom: -100px;
+    padding-top: 30px;
+    padding-left: 110px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+}
+.chitiet a{
+    /* font-weight: bold; */
+    transition: 1s all ease;
+}
+
+.chitiet a:hover{
+    color: red;
+    font-size: 14px;
+}
+
+.recent-order tbody tr td:nth-child(2){
+    cursor: pointer;
+    color: rgb(221, 94, 94);
+    transition: .5s all ease;
+}
+
+.recent-order tbody tr td:nth-child(2):hover {
+    color: rgb(221, 50, 50);
+    font-size: 14px;
+}
+
+.icon img {
+    width:30px;
+    height: 30px;
+    padding: -20px -20px;
+    border-radius: 50%;
+    transition: .5s all ease;
+}
+
+.icon img:hover {
+    transform: translateY(-3px); 
+}
+
+.button {
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.right .sales-analytics .add-product:hover #adress-form a h3{
+    /* background: var(--color-primary); */
+    color: var(--color-white);
+}
 
