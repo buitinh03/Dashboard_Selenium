@@ -119,14 +119,14 @@ include_once('connect.php');
                             ?>
                             <?php  $phantram = $result[$thang[$i]] / $result[$thang[($i+1)]] * 100; $ket = $phantram - 100; $ketqua = round($ket * 100) / 100; ?>
                             <span class="spans"><?php echo "Tháng ".($dam); ?>
-                            <li ><p style="color: black;"><span>+ </span><?php echo number_format($result[$thang[$i]]); ?><sup>đ</sup> <?php echo "(Giá tăng ".$ketqua." %  So với tháng ".($dam-1).")";?></p></li>
+                            <li ><p style="color: red;"><span>+ </span><?php echo number_format($result[$thang[$i]]); ?><sup>đ</sup> <?php echo "(Giá tăng ".$ketqua." %  So với tháng ".($dam-1).")";?></p></li>
                             </span>
                             <?php 
                             }elseif($result[$thang[$i]]<$result[$thang[$i+1]]){
                             ?>
                             <?php $phantram = $result[$thang[$i+1]] / $result[$thang[($i)]] * 100; $ket = 100-$phantram; $ketqua = round($ket * 100) / 100; ?>
                             <span class="spans"><?php echo "Tháng ".($dam); ?>
-                            <li ><p style="color: black;"><span>+ </span><?php echo number_format($result[$thang[$i]]); ?><sup>đ</sup> <?php echo "(Giá giảm ".$ketqua." % So với tháng ".($dam-1).")"?></p></li>
+                            <li ><p style="color: green;"><span>+ </span><?php echo number_format($result[$thang[$i]]); ?><sup>đ</sup> <?php echo "(Giá giảm ".$ketqua." % So với tháng ".($dam-1).")"?></p></li>
                             </span>
                             <?php }}
                             if($result[$thang[$i]]!= ""&&$result[$thang[$i+1]]== ""){
