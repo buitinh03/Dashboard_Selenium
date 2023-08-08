@@ -26,22 +26,24 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Nhà SX</th>
-                                <th>Nước SX</th>
-                                <th>Thông tin</th>
+                                <!-- <th>Nhà SX</th>
+                                <th>Nước SX</th> -->
                                 <th>SL bán</th>
-                                <th>Giá</th>
-                                <th>Ảnh</th>
-                                <th>Chức năng</th>
                                 <?php 
-                                for($h=0;$h<12;$h++){
+                                $h1=0;
+                                for($h=11;$h>=0;$h--){
+                                    
                                     if((int)$socol[$h]!=0){
+                                        $h1++;
                                 ?>
-                                <th hidden><?php echo $tuan[$h]; ?></th>
+                                <th><?php echo "Tháng ".($h1); ?></th>
                                 <?php
                                     }
                                 }
                                  ?>
+                                <th>Ảnh</th>
+                                <th>Chức năng</th>
+                                
                             </tr>
                         </thead>
                         <style>
@@ -64,6 +66,8 @@
                             .thong_tin {
                                 text-align: left;
                             }
+
+                         
                         </style>
                         
                         <?php 
@@ -79,75 +83,24 @@
                             <tr onclick="handleClick(event)">
                                 <td><?php echo $j;?></td>
                                 <td class="title"><?php echo $set['title']?></td>
-                                <td class="nha-san-xuat"><?php echo $set['nha_san_xuat'] ?></td>
-                                <td class="nuoc-san-xuat"><?php echo $set['nuoc_san_xuat']?></td>
-                                <td class="thong_tin"><?php echo $format->textShorten($set['thong_tin_san_pham'], 50)?></td>
-                                <td class="warning" style="text-align: right;"><?php echo $set['sales_in_last_24_hours']?></td>
-                                <?php if($set['month_2'] == ""){
-                                    ?>
-                                <td class="primary" style="text-align: right;"><?php echo number_format($set['month_1'])?><sup>đ</sup></td>
-                                <?php
-                                } elseif($set['month_3'] == ""){
-                                ?>
-                                <td class="primary" ><?php echo number_format($set['month_2'])?><sup>đ</sup></td>
-                                 <?php 
-                                }elseif($set['month_4'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_3'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_5'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_4'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_6'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_5'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_7'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_6'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_8'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_7'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_9'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_8'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_10'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_9'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_11'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_10'])?><sup>đ</sup></td>
-                                    <?php 
-                                }elseif($set['month_12'] == ""){
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_11'])?><sup>đ</sup></td>
-                                    <?php 
-                                }else{
-                                ?>
-                                    <td class="primary"><?php echo number_format($set['month_12'])?><sup>đ</sup></td>
-                                    <?php 
-                                }
-                                ?>
-                            
-                                <td style="align-items: center; text-align:center; margin: 0 auto;" ><img src='<?php echo $set['photo'] ?>' style="width:30%; text-align:center; margin: 0 auto;"></td>
-                             
-                                <td><a href="product_detail.php?id=<?php echo $set['photo'];?>&price=<?php echo $set['price']?>">Chi tiết</a></td>
-
-                        
+                                <td class="warning" style="text-align: right;"><?php echo $set['sales_in_last_24_hours'] ?></td>
+                               
                                 <?php 
-                                for($h=0;$h<12;$h++){
+                                for($h=11;$h>=0;$h--){
                                     if($socol[$h]!=0){
                                 ?>
-                                <td hidden><?php echo $set[$tuan[$h]]; ?></td>
+                                <td class="primary" style="text-align: right;"><?php echo number_format( $set[$tuan[$h]]); ?><sup>đ</sup></td>
                                 <?php
                                     }
                                 }
                                  ?>
+                              
+                                <td style="align-items: center; text-align:center; margin: 0 auto;" ><img src='<?php echo $set['photo'] ?>' style="width:30%; text-align:center; margin: 0 auto;"></td>
+                             
+                                <td class="chitiet"><a href="product_detail.php?id=<?php echo $set['photo'];?>&price=<?php echo $set['price']?>">Chi tiết</a></td>
+
+                               
+                               
                             </tr>
                             <?php 
                                       }
@@ -159,8 +112,5 @@
                     <a href="#">Show All</a>
                 </div>
             </main>
-            
-
-            
-
+         
     <?php include_once('inc/footer.php') ?>
