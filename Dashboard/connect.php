@@ -37,14 +37,14 @@
 
         function getListproduct(){
             $db=new connect();
-            $select="select * from thuocsi_vn4";
+            $select="select * from thuocsi_vn";
             $result=$db->getList($select);
             return $result;
         }
         
         function analysischart(){
             $db=new connect();
-            $query = "SELECT COUNT(price) AS quantity FROM thuocsi_vn4";
+            $query = "SELECT COUNT(price) AS quantity FROM thuocsi_vn";
             $result = $db->getList($query);
             return $result;
 
@@ -52,7 +52,7 @@
 
         function charproductorder(){
             $db=new connect();
-            $query = "SELECT sum(sales_in_last_24_hours) as sale from thuocsi_vn4";
+            $query = "SELECT sum(sales_in_last_24_hours) as sale from thuocsi_vn";
             $result = $db->exec($query);
             return $result;
 
