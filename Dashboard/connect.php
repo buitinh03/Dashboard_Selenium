@@ -1,14 +1,19 @@
 <?php
+    require '../vendor/autoload.php'; // Đường dẫn tới autoload.php của Composer
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+    
     class connect{
         var $db=null;
         public function __construct(){
-            $host = 'localhost';
-            $port = '5432';
-            $name = 'postgres';
-            $pass = 'abcd@1234';
-            $dbname = 'thuocsi_selenium';
-            $dns = "pgsql:host=$host port=$port dbname=$dbname user=$name;password=$pass";
-            $this->db=new PDO($dns);
+            $host = $_ENV['DB_HOST'];
+            $port = $_ENV['DB_PORT'];
+            $name = $_ENV['DB_NAME'];
+            $user = $_ENV['DB_USER'];
+            $pass = $_ENV['DB_PASS'];
+            $dns = "pgsql:host=$host;port=$port;dbname=$name;user=$user;password=$pass";
+            $this->db = new PDO($dns);
+
         }
         public function getList($select){
             $results=$this->db->query($select);

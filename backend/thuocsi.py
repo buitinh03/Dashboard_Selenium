@@ -11,6 +11,12 @@ import datetime
 import subprocess
 import codecs
 import sys
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 
 # Set console encoding to UTF-8
@@ -54,10 +60,14 @@ def run_python():
     url = "https://thuocsi.vn/products"
 
     connection = psycopg2.connect(
-        host="localhost",
-        database="thuocsi_selenium",
-        user="postgres",
-        password="abcd@1234"
+        # host="localhost",
+        # database="thuocsi_selenium",
+        # user="postgres",
+        # password="abcd@1234"
+        host=os.getenv("DB_HOST"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD") 
     )
 
     with connection.cursor() as cursor:
