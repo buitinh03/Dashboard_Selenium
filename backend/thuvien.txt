@@ -4,3 +4,4 @@ psycopg2 == 2.9.6
 bs4 == 0.0.1
 flask == 1.1.2
 datetime == 5.2
+dotenv == 1.0.0
