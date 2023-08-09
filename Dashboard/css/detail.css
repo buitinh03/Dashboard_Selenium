@@ -1,7 +1,8 @@
 
 /* Detail */
 body {
-    font-family: 'Times New Roman', Times, serif;
+/*     font-family: 'Times New Roman', Times, serif; */
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product {
@@ -208,6 +209,7 @@ p {
     margin-left: 10px;
     margin-right: 20px;
     font-size: 18px;
+    max-width: 100%;
 }
 
 .recent-order {
