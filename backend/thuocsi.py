@@ -24,20 +24,6 @@ if sys.stdout.encoding != 'utf-8':
     sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
     sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
 
-# Đọc danh sách thư viện từ file
-with open('thuvien.txt', 'r') as file:
-    libraries = [line.strip() for line in file]
-
-# Cài đặt các thư viện bằng pip
-for library in libraries:
-    try:
-        # Sử dụng subprocess để thực hiện lệnh cài đặt
-        subprocess.check_call(['pip', 'install', library])
-        print(f"Đã cài đặt thư viện {library}")
-    except Exception as e:
-        print(f"Lỗi khi cài đặt thư viện {library}: {e}")
-
-
 app = Flask(__name__)
 
 
