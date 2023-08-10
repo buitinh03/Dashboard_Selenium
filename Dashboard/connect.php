@@ -1,5 +1,5 @@
 <?php
-    require '../vendor/autoload.php'; // Đường dẫn tới autoload.php của Composer
+    require 'vendor/autoload.php'; // Đường dẫn tới autoload.php của Composer
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
     
