@@ -37,7 +37,7 @@
                                     if((int)$socol[$h]!=0){
                                         $h1++;
                                 ?>
-                                <th><?php echo "Tháng ".($h1); ?></th>
+                                <th><?php echo "Lần ".($h1); ?></th>
                                 <?php
                                     }
                                 }
